@@ -1,0 +1,31 @@
+---
+- name: Upload static website to S3 bucket
+  hosts: local
+  gather_facts: no
+  vars:
+    s3_bucket_name: "{{ lookup('env','TF_VAR_bucket_name') }}"
+
+  tasks:
+    - name: Upload index.html
+      aws_s3:
+        bucket: "{{ s3_bucket_name }}"
+        object: index.html
+        src: ../website/index.html
+        mode: put
+        acl: public-read
+      register: upload_index
+
+    - name: Upload error.html
+      aws_s3:
+        bucket: "{{ s3_bucket_name }}"
+        object: error.html
+        src: ../website/error.html
+        mode: put
+        acl: public-read
+      register: upload_error
+
+    - name: Print upload result
+      debug:
+        msg: |
+          Index.html upload: {{ upload_index }}
+          Error.html upload: {{ upload_error }}
