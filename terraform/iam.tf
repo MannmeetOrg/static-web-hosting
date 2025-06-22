@@ -1,3 +1,5 @@
+# IAM Role for Terraform S3 State Bucket Access
+
 resource "aws_iam_role" "terraform_s3_state" {
   name = "terraform-s3-state-role"
 

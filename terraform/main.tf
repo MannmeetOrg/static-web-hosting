@@ -1,3 +1,5 @@
+# Static Web Hosting
+
 output "website_endpoint" {
   description = "URL of the S3 Static Website"
   value       = aws_s3_bucket.static_website.website_endpoint

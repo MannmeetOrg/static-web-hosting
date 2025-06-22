@@ -1,3 +1,4 @@
+# Terraform Backend Configuration File
 terraform {
   backend "s3" {
     bucket         = var.terraform_state_bucket
