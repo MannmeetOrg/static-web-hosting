@@ -30,6 +30,8 @@ This project automates the creation of an AWS S3 bucket configured for static we
     - `TERRAFORM_LOCK_TABLE` (used inside Terraform variables)
 
 # Project Directory Structure:
+...
+.
 terraform-aws-s3-static-website/
 ├── ansible/
 │   ├── inventory.ini
@@ -50,6 +52,7 @@ terraform-aws-s3-static-website/
 │   └── workflows/
 │       └── terraform.yml
 └── README.md
+...
 
 ## Usage
 
